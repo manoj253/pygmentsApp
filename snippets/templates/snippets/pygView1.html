@@ -7,11 +7,13 @@
 {% autoescape off %}
 {{obj.highlighted}}
 <br>
-{{obj.created}}
+<p>Created: {{obj.created}}</p>
 
 
 {% endautoescape %}
 <br>
+<br>
+<strong><a href="{% url 'edit' obj.pk %}">Edit Here</a></strong>
 
 
 </body>
