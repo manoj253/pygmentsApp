@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+</head>
+<body>
+<h2>Home</h2>
+{% if user.is_authenticated %}
+		<h2>welcome back {{user.username}}<h2>
+	{%else%}
+		<p></p>
+		<form action="/login/">
+{% csrf_token %}
+	<input type="submit" name="login" value="login">
+</form>
+<br>
+	{% endif %}
+
+<br>
+
+<form action="/register/">
+{% csrf_token %}
+	<input type="submit" name="register" value="Register">
+	
+</form>
+<br>
+<form action="/create/">
+{% csrf_token %}
+	<input type="submit" name="create" value="Create Snippet Here">
+	
+</form>
+</body>
+</html>
